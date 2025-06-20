@@ -6,12 +6,13 @@ import Timeline from "../components/Timeline"
 import Marquee from "../components/Marquee"
 import ContactForm from "../components/ContactForm"
 import NewsletterSubscribe from "../components/NewsletterSubscribe"
+import PageDisplay from "../components/PageDisplay"
 
 export default function Work() {
   return (
     <>
 
-      <PortfolioGrid />
+      <PageDisplay />
     <FeatureCarousel />
 
 

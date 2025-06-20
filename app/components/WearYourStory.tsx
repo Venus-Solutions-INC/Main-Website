@@ -25,7 +25,7 @@ export default function WearYourStory() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <a
-              href="https://www.venussolutions.com"
+              href="https://venuscomputers.tech/work"
               target="_blank"
               rel="noopener noreferrer"
               className="apple-button inline-flex items-center"
