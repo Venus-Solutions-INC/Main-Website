@@ -59,7 +59,7 @@ export default function Header() {
         <div className="flex flex-1 justify-end">
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(theme === "dark" ? "dark" : "light")}
               className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
             >
               {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
