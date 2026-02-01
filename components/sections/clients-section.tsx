@@ -21,6 +21,7 @@ export function ClientsSection() {
     { name: "AVNL", logo: "/logos/AVNL.png", desc: "Produces armored fighting vehicles & weapons." },
     { name: "BHEL", logo: "/logos/bhel.jpg", desc: "Bharat Heavy Electricals Limited – power equipment manufacturing." },
     { name: "South Central Railways", logo: "/logos/scr.jpg", desc: "One of 17 zones of Indian Railways – major rail network." },
+    { name: "Ship Building Centre", logo: "/logos/navy.png", desc: "Shipbuilding and marine engineering facility." },
   ]
 
   useEffect(() => {

@@ -50,21 +50,23 @@ export function WorkSection() {
 // re-run when section becomes visible
 
   const hardwareProjects = [
-    { number: "01", title: "Data Centre - Brahmos Aerospace", category: "Server & SAN", year: "2024", direction: "left" },
-    { number: "02", title: "CCTV - Nuclear Fuel Complex", category: "Surveillance", year: "2024", direction: "right" },
-    { number: "03", title: "RFID Access - Ordnance Factory Medak", category: "Security", year: "2023", direction: "left" },
-    { number: "04", title: "Boom Barrier + RFID - Ordnance Factory Medak", category: "Gate Security", year: "2023", direction: "right" },
-    { number: "05", title: "Optical Fiber & Copper - EME Records", category: "Network", year: "2022", direction: "left" },
-    // ... add more if needed
+    { number: "01", title: "Management Information System - South Central Railways", category: "Custom Infrastructure", year: "2014", direction: "left" },
+    { number: "02", title: "Data Centre - Brahmos Aerospace", category: "Custom Infrastructure", year: "2022", direction: "left" },
+    { number: "03", title: "CCTV Infrastucture - Nuclear Fuel Complex & EME Records & Ordnance Factory Medak ", category: "Unified Surveillance Deployment", year: "2020-present", direction: "right" },
+    { number: "04", title: "RFID Access - Ordnance Factory Medak", category: "Security", year: "2023", direction: "left" },
+    { number: "05", title: "Boom Barrier + RFID - Ordnance Factory Medak", category: "Gate Security", year: "2023", direction: "right" },
+    { number: "06", title: "Optical Fiber & Copper - EME Records", category: "Network", year: "2022", direction: "left" },
+    { number: "07", title: "Professional Audio Video Infrastructure Deployment - Department of Atomic Energy", category: "Audio Visual", year: "2024", direction: "right" },
   ]
 
   const softwareProjects = [
-    { number: "S01", title: "FaceTrack", category: "Computer Vision", year: "2023", direction: "left", status: "Production" },
-    { number: "S02", title: "AI Document Intelligence", category: "AI & NLP", year: "2024", direction: "right", status: "Production" },
-    { number: "S03", title: "My IARE Campus App", category: "Mobile • Flutter", year: "2024", direction: "left", status: "Active" },
-    { number: "S04", title: "PDF to Excel SAP Converter", category: "Document Automation", year: "2023", direction: "right", status: "Production" },
-    { number: "S05", title: "ID Card Creation Software", category: "Custom Templates • OFMK", year: "2023", direction: "left", status: "Production" },
-    { number: "S06", title: "Bill of Materials Software", category: "BOM Tool • OFMK", year: "2024", direction: "right", status: "Production" },
+    { number: "01", title: "ID Card Creation Software", category: "Custom Software Solution • Armoured Vehicle Nigam Limited", year: "2025", direction: "left", status: "Production" },
+    { number: "02", title: "Bill of Materials Software", category: "Bill of Materials  • Armoured Vehicle Nigam Limited", year: "2025", direction: "right", status: "Production" },
+    { number: "03", title: "FaceTrack", category: "Computer Vision", year: "2023", direction: "right", status: "Production" },
+    { number: "04", title: "AI Document Intelligence", category: "AI & NLP", year: "2024", direction: "left", status: "Production" },
+    { number: "05", title: "My IARE Campus App", category: "Mobile • Flutter", year: "2024", direction: "right", status: "Active" },
+    { number: "06", title: "PDF to Excel SAP Converter", category: "Document Automation", year: "2023", direction: "left", status: "Production" },
+
   ]
 
   return (
@@ -87,11 +89,13 @@ export function WorkSection() {
             </div>
             <div className="space-y-4">
               {[
-                { title: "IT Data Centers", desc: "Supply, install & commission" },
-                { title: "Network Laying", desc: "Optical fiber & copper" },
-                { title: "CCTV Surveillance", desc: "Installation & integration" },
-                { title: "Perimeter Security", desc: "Barriers, bollards, scanners" },
-                { title: "Access Control", desc: "RFID & biometrics" },
+                { title: "Hardware Supply and Support", desc: "Dealers and Distributors for IT and Networking Equipment" },
+                { title: "IT Data Centers", desc: "Supply, Installation & Commissioning" },
+                { title: "Network Laying", desc: "Optical Fiber & Copper Cabling" },
+                { title: "CCTV Surveillance", desc: "Installation & Integration" },
+                { title: "Perimeter Security", desc: "Barriers, Bollards, Scanners" },
+                { title: "GateAccess Control", desc: "RFID & Biometrics" },
+                { title: "Sensors and Detectors", desc: "Motion, Smoke, Fire, Gases" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -113,10 +117,12 @@ export function WorkSection() {
             </div>
             <div className="space-y-4">
               {[
-                { title: "Custom Software", desc: "Enterprise apps & tools" },
-                { title: "AI & Computer Vision", desc: "Face recog, document AI" },
-                { title: "Mobile Apps", desc: "Cross-platform solutions" },
-                { title: "Document Processing", desc: "PDF → SAP/Excel" },
+                { title: "Software Development", desc: "Existing Software Upgrades & Maintenance" },
+                { title: "Custom Software Development", desc: "Tailored solutions for specific needs" },
+                { title: "IOT in Enterprise", desc: "IoT solutions for enterprise environments" },
+                { title: "AI & Computer Vision", desc: "AI-powered Solutions" },
+                { title: "Mobile Applications", desc: "Cross-platform Applications" },
+                { title: "Document Processing and Automation", desc: "Automated Document Handling and Processing Workflows" },
               ].map((item, i) => (
                 <div
                   key={i}
