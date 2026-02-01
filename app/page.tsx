@@ -253,12 +253,12 @@ export default function Home() {
               <span className="text-balance">
                 System Integration
                 <br />
-                & IT Solutions
+                & Intelligent Security Solutions
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Delivering comprehensive IT and networking solutions for over 20 years. From data centers to security systems, we integrate complex technology seamlessly.
+                Delivering comprehensive IT and networking solutions for over 24 years. From data centers to security systems, we integrate complex technology seamlessly.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
