@@ -17,19 +17,18 @@ export const metadata: Metadata = {
   title: "Venus Computers | System Integration, Software & IT Solutions",
   description:
     "Delivering comprehensive IT, software, and networking solutions for over 24 years. From enterprise applications and data centers to security systems, we integrate complex technology seamlessly.",
-  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/logo_main.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/logo_main.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/logo_main.png",
         type: "image/svg+xml",
       },
     ],
