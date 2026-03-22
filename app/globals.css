@@ -133,6 +133,12 @@
       radial-gradient(circle at 48% 84%, rgba(214, 110, 39, 0.08), transparent 22%),
       linear-gradient(180deg, #09070a 0%, #120d0b 46%, #0c0908 100%);
     min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -152,7 +158,8 @@
 
 .section-shell {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: hidden;
 }
 
 .section-shell::before {
@@ -311,6 +318,50 @@
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .section-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .section-copy {
+    margin-top: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+
+  .marquee-shell {
+    border-radius: 1.75rem;
+    padding: 1rem;
+  }
+
+  .marquee-track {
+    width: auto;
+    gap: 0.9rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    animation: none;
+    scroll-snap-type: x proximity;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .marquee-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marquee-card {
+    min-width: min(85vw, 19rem);
+    scroll-snap-align: start;
+    white-space: normal;
+  }
 }
 
 @keyframes marqueeScroll {

@@ -109,10 +109,10 @@ export function Process() {
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16 grid gap-8 xl:grid-cols-[minmax(0,1.05fr)_420px] xl:items-end"
+          className="mb-12 grid gap-6 sm:mb-16 sm:gap-8 xl:grid-cols-[minmax(0,1.05fr)_420px] xl:items-end"
         >
           <div className="section-intro !mb-0">
-            <span className="inline-flex items-center gap-3 rounded-full border border-[#ffb36b]/25 bg-white/5 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.34em] text-[#ffb36b] backdrop-blur-sm">
+            <span className="inline-flex items-center gap-3 rounded-full border border-[#ffb36b]/25 bg-white/5 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.28em] text-[#ffb36b] backdrop-blur-sm sm:text-[11px] sm:tracking-[0.34em]">
               <span className="h-2 w-2 rounded-full bg-[#ff8a3d]" />
               Our Process
             </span>
@@ -128,21 +128,21 @@ export function Process() {
             </p>
           </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,154,77,0.16),rgba(255,255,255,0.04),rgba(255,122,61,0.12))] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl"
-        >
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,154,77,0.16),rgba(255,255,255,0.04),rgba(255,122,61,0.12))] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:rounded-[2rem] sm:p-6"
+          >
             <p className="text-xs uppercase tracking-[0.32em] text-[#ffb36b]">
               Delivery Principles
             </p>
-            <p className="mt-4 text-base leading-8 text-white/70">
+            <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
               Clear planning, strong technical execution, transparent
               communication, and dependable support at every stage of delivery.
             </p>
 
-            <div className="mt-6 grid grid-cols-3 gap-3">
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {highlights.map((item) => (
                 <div
                   key={item.label}
@@ -230,7 +230,7 @@ function ProcessStep({
         variants={cardSequence}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.03))] p-7 shadow-[0_22px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#ffb36b]/35 hover:shadow-[0_28px_80px_rgba(0,0,0,0.42)] md:p-8 ${
+        className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.03))] p-5 shadow-[0_22px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#ffb36b]/35 hover:shadow-[0_28px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:p-7 md:p-8 ${
           reverse
             ? "lg:max-w-[86%] lg:justify-self-end lg:mr-10"
             : "lg:max-w-[86%]"
@@ -257,7 +257,7 @@ function ProcessStep({
 
         <div className="relative z-10">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-            <motion.div variants={cardItem} className="flex items-center gap-4">
+            <motion.div variants={cardItem} className="flex items-center gap-3 sm:gap-4">
               <motion.div
                 variants={cardItem}
                 animate={
@@ -273,21 +273,21 @@ function ProcessStep({
                   delay: index * 0.1 + 0.4,
                   ease: "easeInOut",
                 }}
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#ffb36b]/20 bg-[#ffb36b]/10 text-[#ffb36b] lg:hidden"
+                className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#ffb36b]/20 bg-[#ffb36b]/10 text-[#ffb36b] sm:h-14 sm:w-14 sm:rounded-2xl lg:hidden"
               >
-                <Icon className="h-6 w-6" />
+                <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
               </motion.div>
 
-              <div>
+              <div className="min-w-0">
                 <motion.div
                   variants={cardItem}
-                  className="text-xs uppercase tracking-[0.34em] text-[#ffb36b]"
+                  className="text-[11px] uppercase tracking-[0.28em] text-[#ffb36b] sm:text-xs sm:tracking-[0.34em]"
                 >
                   {step.tag}
                 </motion.div>
                 <motion.h3
                   variants={cardItem}
-                  className="mt-3 text-3xl font-semibold text-white md:text-[2.2rem]"
+                  className="mt-3 text-[1.7rem] font-semibold text-white sm:text-3xl md:text-[2.2rem]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {step.title}
@@ -306,7 +306,7 @@ function ProcessStep({
                   : {}
               }
               transition={{ duration: 1, delay: index * 0.08 + 0.25 }}
-              className="text-5xl font-bold leading-none text-[#ff7a3d]/25 md:text-6xl"
+              className="text-4xl font-bold leading-none text-[#ff7a3d]/25 sm:text-5xl md:text-6xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {step.number}
@@ -315,7 +315,7 @@ function ProcessStep({
 
           <motion.p
             variants={cardItem}
-            className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-[1.05rem]"
+            className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:mt-6 sm:text-base sm:leading-8 md:text-[1.05rem]"
           >
             {step.description}
           </motion.p>

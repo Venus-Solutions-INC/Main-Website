@@ -53,32 +53,32 @@ export function About() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="glass-panel rounded-[2rem] p-7 md:p-8"
+            className="glass-panel rounded-[1.6rem] p-5 sm:rounded-[2rem] sm:p-7 md:p-8"
           >
             <p className="text-xs uppercase tracking-[0.3em] text-[#ffb36b]">
               Company Snapshot
             </p>
             <h3
-              className="mt-4 text-4xl font-semibold text-white md:text-[2.9rem]"
+              className="mt-4 text-[2rem] font-semibold text-white sm:text-4xl md:text-[2.9rem]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Built on long-term trust, technical discipline, and consistent delivery.
             </h3>
-            <p className="mt-5 max-w-3xl text-lg leading-9 text-white/70">
+            <p className="mt-5 max-w-3xl text-base leading-8 text-white/70 sm:text-lg sm:leading-9">
               We work across enterprise infrastructure, software platforms,
               surveillance, networking, and mission-critical implementations
               with a strong focus on clarity, reliability, and execution
               quality.
             </p>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-3">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
-                  className="glass-panel rounded-[1.7rem] p-5"
+                  className="glass-panel rounded-[1.35rem] p-4 sm:rounded-[1.7rem] sm:p-5"
                 >
                   <div
                     className="text-4xl font-bold text-white"
@@ -101,29 +101,29 @@ export function About() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="glass-panel rounded-[2rem] p-7 md:p-8"
+            className="glass-panel rounded-[1.6rem] p-5 sm:rounded-[2rem] sm:p-7 md:p-8"
           >
             <p className="text-xs uppercase tracking-[0.3em] text-[#ffb36b]">
               Why Clients Trust Us
             </p>
-            <div className="mt-8 space-y-5">
+            <div className="mt-6 space-y-4 sm:mt-8 sm:space-y-5">
               {values.map((value, index) => (
                 <div
                   key={value.title}
-                  className="rounded-[1.5rem] border border-white/10 bg-black/15 p-5"
+                  className="rounded-[1.25rem] border border-white/10 bg-black/15 p-4 sm:rounded-[1.5rem] sm:p-5"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#ffd29b] to-[#ff8a3d] text-sm font-bold text-[#140b06]">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#ffd29b] to-[#ff8a3d] text-sm font-bold text-[#140b06] sm:h-12 sm:w-12 sm:rounded-2xl">
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h3
-                        className="text-2xl font-semibold text-white"
+                        className="text-xl font-semibold text-white sm:text-2xl"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {value.title}
                       </h3>
-                      <p className="mt-3 text-base leading-8 text-white/70">
+                      <p className="mt-3 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
                         {value.description}
                       </p>
                     </div>

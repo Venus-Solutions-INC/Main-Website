@@ -64,13 +64,13 @@ function ProjectCard({
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.07 }}
-      className="glass-panel group relative overflow-hidden rounded-[2rem] p-6 md:p-8"
+      className="glass-panel group relative overflow-hidden rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-6 md:p-8"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.14),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(255,79,166,0.14),transparent_20%)] opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex items-start gap-5">
+        <div className="flex items-start gap-4 sm:gap-5">
           <div
-            className="text-4xl font-bold text-white/12 md:text-5xl"
+            className="text-3xl font-bold text-white/12 sm:text-4xl md:text-5xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {project.number}
@@ -80,17 +80,17 @@ function ProjectCard({
               {project.category}
             </div>
             <h3
-              className="text-3xl font-semibold text-white md:text-[2.15rem]"
+              className="text-2xl font-semibold text-white sm:text-3xl md:text-[2.15rem]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {project.title}
             </h3>
-            <p className="mt-3 text-lg text-white/70">{project.client}</p>
+            <p className="mt-3 text-base leading-7 text-white/70 sm:text-lg">{project.client}</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4 md:gap-6">
-            <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-base text-white/70">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
+          <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/70 sm:text-base">
             {project.year}
           </span>
           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-300 group-hover:border-[#ffb36b] group-hover:text-[#ffb36b]">

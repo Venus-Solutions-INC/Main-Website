@@ -59,6 +59,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <motion.header
@@ -70,35 +77,35 @@ export function Navbar() {
           : "bg-transparent"
           }`}
       >
-        <div className="container px-4 py-4 md:px-6">
+        <div className="container px-4 py-3 md:px-6 md:py-4">
           <nav
-            className="relative flex h-[4.5rem] items-center justify-between"
+            className="relative flex h-16 items-center justify-between md:h-[4.5rem]"
           >
             <Link
               href="/"
-              className="flex items-center gap-3"
+              className="flex min-w-0 items-center gap-3"
               onClick={(event) => {
                 event.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 shadow-[0_10px_24px_rgba(0,0,0,0.12)] ring-1 ring-white/8">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 shadow-[0_10px_24px_rgba(0,0,0,0.12)] ring-1 ring-white/8 sm:h-12 sm:w-12 sm:rounded-2xl">
                 <Image
                   src="/logo_main.png"
                   alt="Venus Computers logo"
                   width={34}
                   height={34}
-                  className="h-8 w-8 object-contain"
+                  className="h-7 w-7 object-contain sm:h-8 sm:w-8"
                 />
               </div>
-              <div className="hidden sm:block">
+              <div className="min-w-0">
                 <div
-                  className="text-lg font-bold text-white"
+                  className="truncate text-sm font-bold text-white sm:text-lg"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Venus Computers
                 </div>
-                <div className="text-xs uppercase tracking-[0.24em] text-white/40">
+                <div className="hidden text-[10px] uppercase tracking-[0.18em] text-white/40 sm:block sm:text-xs sm:tracking-[0.24em]">
                   IT, Software & Security Solutions
                 </div>
               </div>
@@ -163,9 +170,9 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-[#070b16]/96 px-6 pt-28 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto bg-[#070b16]/96 px-4 pt-24 pb-6 backdrop-blur-xl md:hidden"
           >
-            <nav className="glass-panel rounded-[2rem] p-6">
+            <nav className="glass-panel mx-auto max-w-md rounded-[1.75rem] p-4 sm:rounded-[2rem] sm:p-6">
               <div className="flex flex-col gap-5">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -182,7 +189,7 @@ export function Navbar() {
                         setIsMobileMenuOpen(false);
                         scrollToSection(link.href);
                       }}
-                      className="block rounded-2xl border border-white/8 bg-white/5 px-4 py-4 text-xl text-white"
+                      className="block rounded-[1.25rem] border border-white/8 bg-white/5 px-4 py-3.5 text-lg text-white sm:rounded-2xl sm:py-4 sm:text-xl"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {link.label}
@@ -190,10 +197,16 @@ export function Navbar() {
                   </motion.div>
                 ))}
                 <Button
-                  className="mt-2 h-14 rounded-full bg-gradient-to-r from-[#ffd29b] via-[#ff9a4d] to-[#ff7a3d] text-[#140b06]"
-                  asChild
-                >
-                  <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  className="mt-2 h-13 rounded-full bg-gradient-to-r from-[#ffd29b] via-[#ff9a4d] to-[#ff7a3d] text-base text-[#140b06] sm:h-14"
+                  >
+                  <Link
+                    href="#contact"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setIsMobileMenuOpen(false);
+                      scrollToSection("#contact");
+                    }}
+                  >
                     Book a Call
                   </Link>
                 </Button>

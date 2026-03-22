@@ -16,6 +16,17 @@ export function SmoothScroll({
 
     if (!wrapper || !content) return;
 
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const isTouchDevice =
+      window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024;
+
+    if (prefersReducedMotion || isTouchDevice) {
+      document.body.style.height = "";
+      return;
+    }
+
     let current = window.scrollY;
     let target = window.scrollY;
     let frame = 0;

@@ -117,7 +117,7 @@ function ServiceCard({
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08 }}
       whileHover={{ y: -8 }}
-      className="glass-panel group relative overflow-hidden rounded-[2rem] p-6 md:p-7"
+      className="glass-panel group relative overflow-hidden rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-6 md:p-7"
     >
       <div
         className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${service.accent} opacity-95`}
@@ -131,22 +131,22 @@ function ServiceCard({
 
       <div className="relative z-10">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="inline-flex rounded-full border border-[#ffb36b]/18 bg-[#ffb36b]/10 px-3 py-1 text-[11px] uppercase tracking-[0.26em] text-[#ffd9b0]">
+          <div className="min-w-0">
+            <div className="inline-flex max-w-full rounded-full border border-[#ffb36b]/18 bg-[#ffb36b]/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#ffd9b0] sm:text-[11px] sm:tracking-[0.26em]">
               {service.eyebrow}
             </div>
 
-            <div className="relative mt-5 flex h-16 w-16 items-center justify-center rounded-[1.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.02))] text-[#ffb36b] shadow-[0_12px_24px_rgba(0,0,0,0.2)] transition-transform duration-300 group-hover:scale-[1.06]">
-              <div className="absolute inset-0 rounded-[1.4rem] bg-gradient-to-br from-white/10 to-transparent opacity-70" />
+            <div className="relative mt-4 flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.02))] text-[#ffb36b] shadow-[0_12px_24px_rgba(0,0,0,0.2)] transition-transform duration-300 group-hover:scale-[1.06] sm:mt-5 sm:h-16 sm:w-16 sm:rounded-[1.4rem]">
+              <div className="absolute inset-0 rounded-[1.15rem] bg-gradient-to-br from-white/10 to-transparent opacity-70 sm:rounded-[1.4rem]" />
               <div className="relative">
-                <Icon className="h-7 w-7" />
+                <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
             </div>
           </div>
 
           <div className="flex flex-col items-end gap-3">
             <span
-              className="text-4xl font-bold text-white/10 transition-colors duration-300 group-hover:text-white/20"
+              className="text-3xl font-bold text-white/10 transition-colors duration-300 group-hover:text-white/20 sm:text-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {String(index + 1).padStart(2, "0")}
@@ -156,13 +156,13 @@ function ServiceCard({
         </div>
 
         <h3
-          className="mt-8 max-w-[15rem] text-[1.9rem] font-semibold leading-tight text-white"
+          className="mt-6 max-w-[15rem] text-[1.55rem] font-semibold leading-tight text-white sm:mt-8 sm:text-[1.9rem]"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {service.title}
         </h3>
 
-        <p className="mt-4 text-base leading-8 text-white/72">
+        <p className="mt-4 text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
           {service.description}
         </p>
 
@@ -215,12 +215,12 @@ export function Services() {
           <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <h3
-                className="text-3xl font-semibold text-white md:text-[2.5rem]"
+                className="text-[2rem] font-semibold text-white sm:text-3xl md:text-[2.5rem]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Infrastructure
               </h3>
-              <p className="mt-2 max-w-2xl text-base leading-8 text-white/60">
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
                 Built for uptime, visibility, and dependable operations across
                 enterprise and mission-critical environments.
               </p>
@@ -241,12 +241,12 @@ export function Services() {
           <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <h3
-                className="text-3xl font-semibold text-white md:text-[2.5rem]"
+                className="text-[2rem] font-semibold text-white sm:text-3xl md:text-[2.5rem]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Software
               </h3>
-              <p className="mt-2 max-w-2xl text-base leading-8 text-white/60">
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
                 Modern digital products and intelligent systems designed for
                 scale, clarity, and measurable business impact.
               </p>

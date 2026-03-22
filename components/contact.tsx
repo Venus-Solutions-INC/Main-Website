@@ -39,18 +39,18 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)]">
+        <div className="grid gap-6 lg:grid-cols-[420px_minmax(0,1fr)] lg:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="glass-panel rounded-[2rem] p-7 md:p-8"
+            className="glass-panel rounded-[1.6rem] p-5 sm:rounded-[2rem] sm:p-7 md:p-8"
           >
             <p className="text-xs uppercase tracking-[0.3em] text-[#ffb36b]">
               Let&apos;s Connect
             </p>
             <h3
-              className="mt-4 text-4xl font-semibold text-white"
+              className="mt-4 text-3xl font-semibold text-white sm:text-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a conversation with our team.
@@ -66,7 +66,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-panel rounded-[2rem] p-7 md:p-8"
+            className="glass-panel rounded-[1.6rem] p-5 sm:rounded-[2rem] sm:p-7 md:p-8"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
@@ -95,7 +95,7 @@ export function Contact() {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="h-15 w-full rounded-full bg-gradient-to-r from-[#ffd29b] via-[#ff9a4d] to-[#ff7a3d] text-lg font-semibold text-[#140b06]"
+                className="h-13 w-full rounded-full bg-gradient-to-r from-[#ffd29b] via-[#ff9a4d] to-[#ff7a3d] text-base font-semibold text-[#140b06] sm:h-15 sm:text-lg"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
@@ -146,13 +146,13 @@ function ContactItem({
   href?: string;
 }) {
   const content = (
-    <div className="flex items-start gap-4 rounded-[1.5rem] border border-white/8 bg-black/15 p-4">
+    <div className="flex items-start gap-3 rounded-[1.25rem] border border-white/8 bg-black/15 p-4 sm:gap-4 sm:rounded-[1.5rem]">
       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#ffd29b] to-[#ff8a3d] text-[#140b06]">
         <Icon className="h-5 w-5" />
       </div>
-      <div>
+      <div className="min-w-0">
         <div className="text-xs uppercase tracking-[0.2em] text-white/40">{label}</div>
-        <p className="mt-2 text-base leading-7 text-white/80">{value}</p>
+        <p className="mt-2 break-words text-sm leading-6 text-white/80 sm:text-base sm:leading-7">{value}</p>
       </div>
     </div>
   );
